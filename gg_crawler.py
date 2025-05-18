@@ -8,23 +8,14 @@ import time
 from PIL import Image
 import io
 
-# Danh sách thiết bị và từ khóa tiếng Anh tương ứng
 currencies = {
-    "vnd_1000": "1000 Vietnamese dong",
-    "vnd_2000": "2000 Vietnamese dong",
-    "vnd_5000": "5000 Vietnamese dong",
-    "vnd_10000": "10000 Vietnamese dong",
-    "vnd_20000": "20000 Vietnamese dong",
-    "vnd_50000": "50000 Vietnamese dong",
-    "vnd_100000": "100000 Vietnamese dong",
-    "vnd_200000": "200000 Vietnamese dong",
-    "vnd_500000": "500000 Vietnamese dong"
+    "vnd_1000": "tờ 1000 đồng",
 }
 
 base_dir = "vnd_currency"
 os.makedirs(base_dir, exist_ok=True)
 
-target_images = 700
+target_images = 20
 min_width = 180
 min_height = 180
 
@@ -43,7 +34,7 @@ def check_image_size(image_data):
         return False
 
 try:
-    for folder_name, keyword in appliances.items():
+    for folder_name, keyword in currencies.items():
         save_dir = os.path.join(base_dir, folder_name)
         os.makedirs(save_dir, exist_ok=True)
 
